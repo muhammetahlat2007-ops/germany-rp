@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benim İçerik Portalı</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="logo">🎥 PORTALIM</div>
+            <div class="search-bar-wrapper">
+                <input type="text" id="search-input" placeholder="Video veya fotoğraf ara...">
+                <button id="search-button">Ara</button>
+            </div>
+        </div>
+        
+        <nav class="tabs">
+            <button class="tab-button active" data-filter="all">Tümü</button>
+            <button class="tab-button" data-filter="video">Videolarımız</button>
+            <button class="tab-button" data-filter="image">Fotoğraflarımız</button>
+            <button class="tab-button" data-filter="announcement">Duyurularımız</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="content-gallery" class="content-grid">
+            
+        </div>
+    </main>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
