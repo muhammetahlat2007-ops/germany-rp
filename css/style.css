@@ -1,0 +1,204 @@
+/* ====================================
+   1. GENEL VE SIFIRLAMA
+   ==================================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Koyu Tema */
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* ====================================
+   2. BAŞLIK VE NAVİGASYON
+   ==================================== */
+.main-header {
+    background-color: #1f1f1f;
+    padding: 20px 40px;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff0000;
+}
+
+/* Arama Çubuğu Stili */
+.search-bar-wrapper {
+    display: flex;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 40px;
+}
+
+#search-input {
+    flex-grow: 1;
+    padding: 10px 20px;
+    border-radius: 25px 0 0 25px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+}
+
+#search-button {
+    padding: 10px 25px;
+    border-radius: 0 25px 25px 0;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Sekmeler (Tabs) Stili */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.tab-button {
+    background-color: #333;
+    color: #bbb;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tab-button.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: 500;
+}
+
+/* ====================================
+   3. İÇERİK (GALERİ)
+   ==================================== */
+.container {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: grid;
+    /* 350 pikselden küçük olmayacak şekilde sütunlar oluşturur */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    gap: 30px;
+}
+
+/* İçerik Kartları */
+.content-card {
+    background-color: #282828;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Tıklanabilir olduğunu belli eder */
+}
+
+.content-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+}
+
+.content-card[data-type="announcement"] {
+    background-color: #3d3d5c; /* Duyurular için farklı renk */
+}
+
+.media-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 oranında alan ayırır */
+    height: 0;
+    overflow: hidden;
+}
+
+.content-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Video ve Fotoğraflar için Play ikonu */
+.content-card[data-type="video"] .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    padding: 10px 20px 10px 25px;
+    pointer-events: none;
+}
+
+.content-info {
+    padding: 20px;
+}
+
+.content-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007bff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content-info p {
+    font-size: 1em;
+    color: #b0b0b0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Duyuru Başlığı Alanı */
+.content-card[data-type="announcement"] .media-wrapper {
+    height: 100px;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a47;
+}
+
+.content-card[data-type="announcement"] .media-wrapper h3 {
+    color: white;
+    font-size: 1.8em;
+    margin: 0;
+}
+/* ... (Geri kalan Responsive CSS kodlarını önceki cevabımızdan kullanabilirsiniz) ... */
